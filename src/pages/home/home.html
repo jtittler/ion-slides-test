@@ -19,8 +19,7 @@
   <ion-grid>
     <ion-row row-6>
       <ion-col>
-        <ion-slides style="height: 33vh;">
-          <ion-slides (ionSlideAutoplay)="fireEvent(SLIDE_AUTOPLAY)"
+        <ion-slides style="height: 33vh;" (ionSlideAutoplay)="fireEvent(SLIDE_AUTOPLAY)"
                       (ionSlideAutoplayStart)="fireEvent(SLIDE_AUTOPLAY_START)"
                       (ionSlideAutoplayStop)="fireEvent(SLIDE_AUTOPLAY_STOP)"
                       (ionSlideDidChange)="fireEvent(SLIDE_DID_CHANGE)"
@@ -58,7 +57,6 @@
                 <h4>Slide 3</h4>
             </ion-slide>
           </ion-slides>
-        </ion-slides>
       </ion-col>
     </ion-row>
     <ion-row>
