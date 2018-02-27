@@ -1,0 +1,47 @@
+<!--
+  Generated template for the InfoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Test Description &amp; Findings</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <h2>Description</h2>
+  <p>This is a simple &lt;ion-slides&gt; control with 4 slides.
+     A simple function is fired for each event a &lt;ion-slides&gt;
+     control is supposed to handle which records the event happening
+     to the screen. The PLAY and STOP buttons are SUPPOSED to start and
+     stop autoplay on the slides. That doesn't seem to work at all, neither
+     does slideNext and slidePrev. The RESET button clears the messages and is
+     supposed to set the active slide to the 1st slide. It doesn't seem to
+     change the active slide.
+  </p>
+  <p style="color:purple">NOTE: Use drag to slide between slides. The .slideTo .slidePrev and .slideNext
+    don't seem to work
+  </p>
+  <h2>Findings</h2>
+  <ion-list>
+    <ion-item item-start><ion-icon name="checkmark"></ion-icon>ionSlideTap fires.</ion-item>
+    <ion-item item-start><ion-icon name="checkmark"></ion-icon>ionSlideDoubleTap fires.</ion-item>
+    <ion-item item-start><ion-icon name="checkmark"></ion-icon>ionDrag fires.</ion-item>
+    <ion-item item-start><ion-icon name="hand"></ion-icon>ionWillChange doesn't fire</ion-item>
+    <ion-item item-start><ion-icon name="hand"></ion-icon>ionAutoplayStart doesn't fire</ion-item>
+    <ion-item item-start><ion-icon name="hand"></ion-icon>ionAutoplayStop doesn't fire</ion-item>
+    <ion-item item-start><ion-icon name="hand"></ion-icon>ionDidChange SOMETIMES fire</ion-item>
+    <ion-item item-start><ion-icon name="hand"></ion-icon>ionNextEnd doesn't fire</ion-item>
+    <ion-item item-start><ion-icon name="hand"></ion-icon>ionNextStart doesn't fire</ion-item>
+    <ion-item item-start><ion-icon name="hand"></ion-icon>ionPrevEnd doesn't fire</ion-item>
+    <ion-item item-start><ion-icon name="hand"></ion-icon>ionPrevStart doesn't fire</ion-item>
+    <ion-item item-start><ion-icon name="hand"></ion-icon>ionReachEnd SOMETIMES fire</ion-item>
+    <ion-item item-start><ion-icon name="hand"></ion-icon>ionReachStart doesn't fire</ion-item>
+  </ion-list>
+  <h4>Press ESC to go back to app</h4>
+</ion-content>

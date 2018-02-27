@@ -1,14 +1,72 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Ionic 3+ Slides Event Test
     </ion-title>
   </ion-navbar>
+
+  <ion-toolbar text-center>
+    <button ion-button (click)='clear()' outline small>Reset</button>
+    <button ion-button (click)='next()' outline small>Next</button>
+    <button ion-button (click)='prev()' outline small>Prev</button>
+    <button ion-button icon-only outline small (click)="autoplayStart()"><ion-icon name="play"></ion-icon></button>
+    <button ion-button icon-only outline small (click)="autoplayStop()"><ion-icon name="square"></ion-icon></button>
+    <button ion-button icon-only outline small (click)="popInfo()"><ion-icon name="information"></ion-icon></button>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <ion-grid>
+    <ion-row row-6>
+      <ion-col>
+        <ion-slides style="height: 33vh;">
+          <ion-slides (ionSlideAutoplay)="fireEvent(SLIDE_AUTOPLAY)"
+                      (ionSlideAutoplayStart)="fireEvent(SLIDE_AUTOPLAY_START)"
+                      (ionSlideAutoplayStop)="fireEvent(SLIDE_AUTOPLAY_STOP)"
+                      (ionSlideDidChange)="fireEvent(SLIDE_DID_CHANGE)"
+                      (ionSlideDoubleTap)="fireEvent(SLIDE_DOUBLE_TAP)"
+                      (ionSlideDrag)="fireEvent(SLIDE_DRAG)"
+                      (ionSlideNextEnd)="fireEvent(SLIDE_NEXT_END)"
+                      (ionSlideNextStart)="fireEvent(SLIDE_NEXT_START)"
+                      (ionSlidePrevEnd)="fireEvent(SLIDE_PREV_END)"
+                      (ionSlidePrevStart)="fireEvent(SLIDE_PREV_START)"
+                      (ionSlideReachEnd)="fireEvent(SLIDE_REACH_END)"
+                      (ionSlideReachStart)="fireEvent(SLIDE_REACH_START)"
+                      (ionSlideTap)="fireEvent(SLIDE_TAP)"
+                      (ionSlideWillChange)="fireEvent(SLIDE_WILL_CHANGE)"
+                      loop='false' initialSlide='0' direction="horizontal"
+                      effect="fade" autoplay="0" loop='true' speed='1000'
+                      style="border: 3px double black;">
+            <ion-slide>
+              <h2>A is for Angular</h2>
+              <ion-icon name="logo-angular"></ion-icon>
+              <h4>Slide 0</h4>
+            </ion-slide>
+            <ion-slide>
+              <h2>B is for Ball</h2>
+              <ion-icon name="baseball"></ion-icon>
+              <h4>Slide 1</h4>
+            </ion-slide>
+            <ion-slide>
+                <h2>C is for Coffee</h2>
+                <ion-icon name="cafe"></ion-icon>
+                <h4>Slide 2</h4>
+            </ion-slide>
+            <ion-slide>
+                <h2>D is for Document</h2>
+                <ion-icon name="document"></ion-icon>
+                <h4>Slide 3</h4>
+            </ion-slide>
+          </ion-slides>
+        </ion-slides>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-12>
+        <ul>
+          <li *ngFor="let msg of messages">{{msg}}</li>
+        </ul>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
